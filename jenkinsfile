@@ -5,7 +5,7 @@ pipeline {
    stage('git clone') {
          steps {
             // Get some code from a GitHub repository
-            git 'https://github.com/Shilpavsqe/index.git'
+            git clone 'https://github.com/Shilpavsqe/index.git'
         }  
       }
       stage ('aws s3') {
