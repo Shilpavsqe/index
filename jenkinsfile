@@ -10,8 +10,11 @@ pipeline {
       }
       stage ('aws s3') {
          steps {
-           sh 'aws s3 cp index.html s3://Shilpavsqe'
+           // sh 'AWS_ACCESS_KEY_ID=AKIA5YLD7IJGMGBIOY6P AWS_SECRET_ACCESS_KEY=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 aws s3 cp index.html s3://my-datastorage'//
+		withAWS(credentials:'a3611278-4569-4cf9-a62c-00fd54b4b732'){
+			 sh 'aws s3 cp index.html s3://shilpavsqe'
+			 }
          }
 	}
-  }
-  }
+   }
+}
